@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_manda/utils/routes.dart';
 import 'package:flutter_manda/utils/screen.dart';
+import 'package:flutter_manda/views/WidgetList/index.dart';
 import 'package:flutter_manda/widgets/DirverLine.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -37,10 +39,10 @@ class Main extends StatelessWidget {
           {
             'name': 'github',
             'icon': IconData(0xe885, fontFamily: 'iconfont'),
-            'color': Colors.orange
+            'color': Colors.orange,
           },
           {
-            'name': 'blog',
+            'name': 'Flutter Widgets',
             'icon': IconData(0xe8e8, fontFamily: 'iconfont'),
             'color': Colors.green
           },
@@ -162,9 +164,11 @@ class BuildAppliaciton extends StatelessWidget {
     return Container(
         child: InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed('git_page', arguments: null); //注意2
-        // PageRouter.router.navigateTo(context, "/git-repos");
-        // Navigator.pushNamed(context, "git");
+        if (item['name'] == 'github') {
+          $router.push(context, '/todo_list', {'title': 'github'});
+        } else {
+          $router.push(context, '/widget_page', {'title': 'widges'});
+        }
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
