@@ -11,16 +11,18 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-            child: Column(
-      children: <Widget>[
-        Text('${widget.props['title']} todo'),
-        RaisedButton(
-          onPressed: () => Navigator.pop(context, "我是返回值"),
-          child: Text("返回"),
-        )
-      ],
-    )));
+    return Scaffold(
+      body: Container(
+          child: Center(
+              child: Column(
+        children: <Widget>[
+          Text('${widget.props['title']} todo'),
+          RaisedButton(
+            onPressed: () => Navigator.pop(context, "我是返回值"),
+            child: Text("返回"),
+          )
+        ],
+      ))),
+    );
   }
 }

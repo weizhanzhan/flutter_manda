@@ -11,16 +11,19 @@ class WidgetList extends StatefulWidget {
 class _WidgetListState extends State<WidgetList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-            child: Column(
-      children: <Widget>[
-        Text('${widget.props['title']}'),
-        RaisedButton(
-          onPressed: () => Navigator.pop(context, "我是返回值"),
-          child: Text("返回"),
-        )
-      ],
-    )));
+    return MaterialApp(
+        home: Scaffold(
+      body: Container(
+          child: Center(
+              child: Column(
+        children: <Widget>[
+          Text('${widget.props['title']}'),
+          RaisedButton(
+            onPressed: () => Navigator.pop(context, "我是返回值"),
+            child: Text("返回"),
+          )
+        ],
+      ))),
+    ));
   }
 }
